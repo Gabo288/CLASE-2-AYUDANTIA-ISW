@@ -1,7 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import morgan from "morgan";
-import { AppDataSource, connectDB } from "./config/configDB.js";
+import { AppDataSource, connectDB } from "./config/configDb.js";
 import { routerApi } from "./routes/index.routes.js";
 
 const app = express();
@@ -19,7 +19,7 @@ connectDB()
     routerApi(app);
 
     // Levanta el servidor Express
-    const PORT = process.env.PORT || 3000;
+    const PORT = process.env.PORT || 80;
     app.listen(PORT, () => {
       console.log(`Servidor iniciado en http://localhost:${PORT}`);
     });
